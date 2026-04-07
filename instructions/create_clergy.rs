@@ -1,11 +1,10 @@
-// programs/apostolic_chain/src/instructions/create_clergy.rs
 use anchor_lang::prelude::*;
 use crate::state::*;
 use crate::errors::ErrorCode;
 
 pub fn handler(
     ctx: Context<CreateClergy>,
-    _seed_bytes: [u8; 32], // <- Adicionamos aqui (com underline se não for usar no corpo)
+    _seed_bytes: [u8; 32], 
     hash: String,
     parent_hash: String,
     name: String,
@@ -40,14 +39,13 @@ pub fn handler(
 }
 
 #[derive(Accounts)]
-// MUDANÇA: Exigimos 32 bytes reais como argumento para o cálculo seguro do PDA
+
 #[instruction(seed_bytes: [u8; 32], hash: String, parent_hash: String)]
 pub struct CreateClergy<'info> {
     #[account(
         init,
         payer = user,
         space = Clergy::INIT_SPACE,
-        // SEED: Agora usa exatos 32 bytes aceitos pela Solana
         seeds = [b"clergy", seed_bytes.as_ref()],
         bump
     )]
