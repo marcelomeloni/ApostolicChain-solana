@@ -13,14 +13,14 @@ pub struct Clergy {
 }
 
 impl Clergy {
-    pub const INIT_SPACE: usize = 8       // Discriminator
-        + (4 + 66)   // hash: "0x" + 64 hex chars
-        + (4 + 66)   // parent_hash
-        + (4 + 100)  // name (margem segura)
-        + 1          // role enum (1 byte para variante)
-        + 8          // start_date i64
-        + (1 + 8)    // Option<i64>
-        + 1;         // bump
+    pub const INIT_SPACE: usize = 8      
+        + (4 + 66) 
+        + (4 + 66)   
+        + (4 + 100) 
+        + 1          
+        + 8         
+        + (1 + 8) 
+        + 1;        
 }
 
 #[derive(AnchorSerialize, AnchorDeserialize, Clone, PartialEq, Eq)]
