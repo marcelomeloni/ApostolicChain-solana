@@ -1,4 +1,3 @@
-// programs/apostolic_chain/src/state.rs
 use anchor_lang::prelude::*;
 
 #[account]
