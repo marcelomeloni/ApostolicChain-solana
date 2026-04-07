@@ -1,4 +1,3 @@
-// programs/apostolic_chain/src/instructions/initialize_genesis.rs
 use anchor_lang::prelude::*;
 use crate::state::*;
 
